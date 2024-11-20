@@ -26,3 +26,9 @@ class PostBlocError extends PostState {
   @override
   List<Object> get props => [error];
 }
+
+class PostBlocSuccess extends PostState {
+  final String message;
+
+  const PostBlocSuccess({required this.message});
+}

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_retrofit_injectable_bloc_poc/bloc/post_bloc_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,6 +31,10 @@ class _HomePageState extends State<HomePage> {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(state.error)),
             );
+          } else if (state is PostBlocSuccess) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(state.message)),
+            );
           }
         },
         builder: (context, state) {
@@ -39,9 +45,16 @@ class _HomePageState extends State<HomePage> {
               itemCount: state.getResults.length,
               itemBuilder: (context, index) {
                 final post = state.getResults[index];
+                log(post.id.toString());
                 return ListTile(
                   title: Text(post.title),
                   subtitle: Text(post.body),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.delete, color: Colors.red),
+                    onPressed: () {
+                      postBloc.add(DeletePost(post.id));
+                    },
+                  ),
                 );
               },
             );

@@ -8,3 +8,15 @@ sealed class PostBlocEvent extends Equatable {
 }
 
 class FetchPost extends PostBlocEvent {}
+
+class DeletePost extends PostBlocEvent {
+  final int id;
+
+  const DeletePost(this.id);
+}
+
+class UpdatePosts extends PostBlocEvent {
+  final List<Post> posts;
+
+  UpdatePosts(this.posts);
+}
