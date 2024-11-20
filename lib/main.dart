@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_retrofit_injectable_bloc_poc/bloc/post_bloc_bloc.dart';
-import 'package:flutter_retrofit_injectable_bloc_poc/data/local_db/dao/post_dao.dart';
-import 'package:flutter_retrofit_injectable_bloc_poc/data/network/service.dart';
 
 import 'injection_conatainer/injection.dart';
 import 'presentation/pages/home_page.dart';

@@ -4,7 +4,6 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_retrofit_injectable_bloc_poc/data/local_db/dao/post_dao.dart';
 import 'package:flutter_retrofit_injectable_bloc_poc/data/local_db/database/post_database.dart';
 import 'package:flutter_retrofit_injectable_bloc_poc/data/network/service.dart';
 import 'package:injectable/injectable.dart';
