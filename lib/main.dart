@@ -19,8 +19,6 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => getIt<PostBloc>()
-            // PostBloc(
-            //     apiService: getIt<PostService>(), postDao: getIt<PostDao>()),
             ),
       ],
       child: MaterialApp(

@@ -18,5 +18,5 @@ class DeletePost extends PostBlocEvent {
 class UpdatePosts extends PostBlocEvent {
   final List<Post> posts;
 
-  UpdatePosts(this.posts);
+ const UpdatePosts(this.posts);
 }
