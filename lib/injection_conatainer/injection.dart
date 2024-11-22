@@ -15,13 +15,11 @@ Future<void> configureDependencies() => getIt.init();
 abstract class RegisterModule {
   @lazySingleton
   Dio get dio {
-    log("Registering Dio");
     return Dio();
   }
 
   @preResolve
   Future<PostDataBase> get database async {
-    log("Registering Database");
     return $FloorPostDataBase.databaseBuilder('post_database.db').build();
   }
 }
